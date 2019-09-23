@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -22,3 +23,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+=======
+# rails_portal
+Web Portal implemented from scratch in Rails
+>>>>>>> 25c948917f31fd2eb2a1957bb3b52e8173afa9ff
