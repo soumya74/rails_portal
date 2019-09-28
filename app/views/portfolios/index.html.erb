@@ -1,0 +1,22 @@
+<h1>Portfolio Index</h1>
+
+<a href=portfolios/new>Create New Item</a>
+<br><br><br>
+<%= link_to "Create Rails Link",new_portfolio_path %>
+<br><br><br>
+<%= link_to new_portfolio_path,new_portfolio_path%>
+<br><br><br>
+<%= link_to new_portfolio_url, new_portfolio_url, sub_domain: 'my_subdomain'%>
+<br><br><br>
+<%=@portfolio_items.inspect%>
+<br>
+<% @portfolio_items.each do |portfolio_item|%>
+    <p><%= link_to portfolio_item.title, portfolio_show_path(portfolio_item.id)%></p>
+    <p><%= portfolio_item.subtitle%></p>
+    <p><%= portfolio_item.body%></p>
+    <%= image_tag portfolio_item.thumb_image if !portfolio_item.thumb_image.nil?%>
+    <%= link_to "Edit", edit_portfolio_path(portfolio_item.id) %>
+    <%= link_to "Show", portfolio_path(portfolio_item.id)%>
+    <td><%= link_to 'Destroy', portfolio_path(portfolio_item), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <br>
+<% end %>

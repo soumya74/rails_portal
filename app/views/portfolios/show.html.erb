@@ -1,0 +1,17 @@
+<h1>Portfolio Item</h1>
+<br>
+<%= @portfolio_item.title%>
+
+<br>
+<%= @portfolio_item.subtitle%>
+
+<br>
+<%= @portfolio_item.body%>
+
+<br>
+<%= image_tag @portfolio_item.main_image if !@portfolio_item.main_image.nil?%>
+
+<br>
+<%= image_tag @portfolio_item.thumb_image if !@portfolio_item.thumb_image.nil?%>
+
+<%= link_to "Back", portfolios_path%>
