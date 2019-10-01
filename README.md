@@ -3,6 +3,8 @@
 
 * Ruby version : ruby-2.6.3
 
+* FriendlyId version : 5.2.4
+
 * System dependencies
 
 * Configuration :
@@ -17,5 +19,3 @@
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-
-* ...

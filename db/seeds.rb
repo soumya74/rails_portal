@@ -6,23 +6,44 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+3.times do |topic|
+  Topic.create!(title: "Topic #{topic}")
+end
+puts ("Seeded 3 data in Blogs table")
 
 #populate blogs table
 10.times do |blog|
     Blog.create!(
         title: "Blog No #{blog}",
-        body: "Want to learn blog-writing "
+        body: "Want to learn blog-writing ",
+        topic_id: Topic.last.id
     )
 end
-puts ("Seeded data in Blogs table")
+puts ("Seeded 10 data in Blogs table")
 
-9.times do |portfolio|
+6.times do |portfolio|
     Portfolio.create!(
-        title: "Portfolio No #{portfolio}",
+        title: "Ruby on Rails",
         subtitle: "Sub Portfolio No #{portfolio}",
         body: "Portfolio Body is awesome",
         main_image: "https://via.placeholder.com/350x350",
         thumb_image: "https://via.placeholder.com/150x150"
     )
 end
-puts ("Seeded data in Portfolio table")
+3.times do |portfolio|
+    Portfolio.create!(
+        title: "Angular",
+        subtitle: "Sub Portfolio No #{portfolio}",
+        body: "Portfolio Body is awesome",
+        main_image: "https://via.placeholder.com/350x350",
+        thumb_image: "https://via.placeholder.com/150x150"
+    )
+end
+puts ("Seeded 9 data in Portfolio table")
+
+3.times do |technology|
+  Portfolio.last.technologies.create!(
+    name: "Technology #{technology}"
+  )
+end
+puts ("Seeded 3 data in Technologies table")

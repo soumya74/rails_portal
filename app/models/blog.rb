@@ -3,6 +3,10 @@ class Blog < ApplicationRecord
     extend FriendlyId
     friendly_id :title, use: :slugged
 
+    validates_presence_of :title, :body
+
+    belongs_to :topic
+
     # Defines when Friendly_Id changes / updates the slug value
     # Here we have set it to change on change in title.
     # FriendlyId version 5(Rails 4 compatible) doesnt re-generates unless we define it explicitly
