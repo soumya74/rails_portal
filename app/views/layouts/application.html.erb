@@ -10,6 +10,23 @@
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <h1>Hi <%= current_user.first_name %></h1>
+
+    <% if current_user.is_a?(User) %>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete  %>
+    <% else %>
+      <h1>Please <%= link_to "Login", new_user_session_path %> / <%= link_to "Register", new_user_registration_path %></h1>
+    <% end %>
+
+    <% if session[:source] %>
+      Thanks for visiting from <%= session[:source] %>
+    <% end %>
+
+    <hr>
+
     <%= yield %>
   </body>
 </html>
