@@ -1,15 +1,19 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
+  layout "blog"
 
   # GET /blogs
   # GET /blogs.json
   def index
     @blogs = Blog.all
+    @page_title = "My Portfolio | Blogs"
   end
 
   # GET /blogs/1
   # GET /blogs/1.json
   def show
+    @page_title = "My Portfolio | " + @blog.title
+    @seo_keywords = @blog.body
   end
 
   # GET /blogs/new
@@ -24,7 +28,7 @@ class BlogsController < ApplicationController
   # POST /blogs
   # POST /blogs.json
   def create
-    @blog = Blog.new(blog_params)
+    @blog = Blog.new(blog_params.merge(topic_id: 3))
 
     respond_to do |format|
       if @blog.save
