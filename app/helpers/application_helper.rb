@@ -14,4 +14,8 @@ module ApplicationHelper
       content_tag(:p, greeting, class: "source-greetings")
     end
   end
+
+  def copyright_generator
+    SsgCopyrightTool::Renderer.copyright "Soumya Sengupta", "All Rights Reserved"
+  end
 end
