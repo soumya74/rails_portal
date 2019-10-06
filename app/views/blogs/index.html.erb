@@ -1,22 +1,13 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-8 blog-main blog-width">
+  <h3 class="pb-1 mb-4 font-italic border-bottom">
+    From the Firehose
+  </h3>
 
-<h1>Blogs</h1>
+  <%= render @blogs%>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Date</th>
-      <th>Body</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <%= render @blogs%>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Blog', new_blog_path %>
+  <nav class="blog-pagination">
+    <a class="btn btn-outline-primary" href="#">Older</a>
+    <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+  </nav>
+  <%= link_to 'New Blog', new_blog_path %>
+</div>
