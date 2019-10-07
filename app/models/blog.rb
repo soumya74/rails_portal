@@ -6,6 +6,7 @@ class Blog < ApplicationRecord
     validates_presence_of :title, :body
 
     belongs_to :topic
+    belongs_to :user
 
     # Defines when Friendly_Id changes / updates the slug value
     # Here we have set it to change on change in title.

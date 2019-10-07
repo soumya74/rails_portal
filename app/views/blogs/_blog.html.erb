@@ -1,8 +1,5 @@
 <div class="blog-post">
   <h2 class="blog-post-title"><%= link_to blog.title, blog %></h2>
-  <p class="blog-post-meta">Created <%= distance_of_time_in_words(blog.created_at, Time.now)%> ago, by <a href="#">Author Name</a></p>
-  <!-- <p><%= link_to blog.status, toggle_status_blog_path(blog), class: "btn btn-sm btn-outline-success" %> /
-    <%= link_to 'Edit', edit_blog_path(blog), class: "btn btn-sm btn-outline-primary" %> /
-    <%= link_to 'Destroy', blog, method: :delete, class: "btn btn-sm btn-outline-danger", data: { confirm: 'Are you sure?'} %></p> -->
-  <p><%= blog.body %></p>
+  <p class="blog-post-meta">Created <%= distance_of_time_in_words(blog.created_at, Time.now)%> ago, by <a href="#"><%= blog.user.name%></a></p>
+  <p><%= blog.body[0,200] %><%= link_to " ... more", blog %></p>
 </div>

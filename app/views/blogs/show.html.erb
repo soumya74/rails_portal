@@ -1,7 +1,7 @@
 <div class="col-md-8 blog-main blog-width">
   <div class="blog-post">
     <h2 class="blog-post-title"><%= @blog.title %></h2>
-    <p class="blog-post-meta">Created <%= distance_of_time_in_words(@blog.created_at, Time.now)%> ago, by <a href="#">Author Name</a></p>
+    <p class="blog-post-meta">Created <%= distance_of_time_in_words(@blog.created_at, Time.now)%> ago, by <a href="#"><%= @blog.user.name%></a></p>
     <p><%= link_to @blog.status, toggle_status_blog_path(@blog), class: "btn btn-sm btn-outline-success" %> /
       <%= link_to 'Edit', edit_blog_path(@blog), class: "btn btn-sm btn-outline-primary" %> /
       <%= link_to 'Destroy', @blog, method: :delete, class: "btn btn-sm btn-outline-danger", data: { confirm: 'Are you sure?'} %></p>

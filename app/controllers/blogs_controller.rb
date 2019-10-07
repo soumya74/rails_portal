@@ -28,7 +28,9 @@ class BlogsController < ApplicationController
   # POST /blogs
   # POST /blogs.json
   def create
-    @blog = Blog.new(blog_params.merge(topic_id: 3))
+    @blog = Blog.new(blog_params.merge(topic_id: 3, user_id: current_user.id))
+
+    # byebug
 
     respond_to do |format|
       if @blog.save
