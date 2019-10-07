@@ -3,7 +3,9 @@
     <h1 class="cover-heading">Welcome</h1>
     <p class="lead">Have a look into this great new idea of Portfolio based Blog creation site. Here you will be able to create blogs on any topic you want, and at the same time you will be able to showcase your portfolio to the reader.</p>
     <p class="lead">
-      <a href="#" class="btn btn-lg btn-secondary">Create Own Portfolio NOW</a>
+      <%= link_to "REGISTER to Create Own Portfolio NOW", new_user_registration_path, class:  "btn btn-lg btn-secondary" if current_user.is_a?(GuestUser)%>
+      <%= link_to "Start by Creating your OWN BLOG", blogs_path, class:  "btn btn-lg btn-secondary" unless current_user.is_a?(GuestUser)%>
+      <%# <a href="#" class="btn btn-lg btn-secondary">REGISTER to Create Own Portfolio NOW</a> %>
     </p>
   </main>
 </div>
