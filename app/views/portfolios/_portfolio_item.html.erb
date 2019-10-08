@@ -1,7 +1,16 @@
-<p><%= link_to portfolio_item.title, portfolio_show_path(portfolio_item.id)%></p>
-<p><%= portfolio_item.subtitle%></p>
-<p><%= portfolio_item.body%></p>
-<%= image_tag portfolio_item.thumb_image if !portfolio_item.thumb_image.nil?%>
-<%= link_to "Edit", edit_portfolio_path(portfolio_item.id) %>
-<%= link_to "Show", portfolio_show_path(portfolio_item.id)%>
-<td><%= link_to 'Destroy', portfolio_path(portfolio_item), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<div class="col-md-4">
+  <div class="card mb-4 box-shadow">
+    <%= image_tag portfolio_item.thumb_image if !portfolio_item.thumb_image.nil?%>
+    <div class="card-body">
+      <p class="card-text"><%= link_to portfolio_item.title, portfolio_show_path(portfolio_item.id)%></p>
+      <p class="card-text"><%= portfolio_item.subtitle%></p>
+      <p class="card-text">Name : <%= portfolio_item.user.first_name if !portfolio_item.user.nil? %></p>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+          <%= link_to 'Delete', portfolio_item, method: :delete, class: "btn btn-sm btn-outline-danger", data: { confirm: 'Are you sure?'} if logged_in?(:site_admin)%>
+        </div>
+        <small class="text-muted"><%= distance_of_time_in_words(portfolio_item.created_at, Time.now)%> ago</small>
+      </div>
+    </div>
+  </div>
+</div>

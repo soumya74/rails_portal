@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_07_052529) do
+ActiveRecord::Schema.define(version: 2019_10_07_213652) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,14 +48,13 @@ ActiveRecord::Schema.define(version: 2019_10_07_052529) do
     t.text "thumb_image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "technologies", force: :cascade do |t|
-    t.string "name"
-    t.bigint "portfolio_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["portfolio_id"], name: "index_technologies_on_portfolio_id"
+    t.bigint "user_id"
+    t.string "facebook_link"
+    t.string "linkedin_link"
+    t.string "insta_link"
+    t.string "twitter_link"
+    t.string "github_link"
+    t.index ["user_id"], name: "index_portfolios_on_user_id"
   end
 
   create_table "topics", force: :cascade do |t|
@@ -80,5 +79,6 @@ ActiveRecord::Schema.define(version: 2019_10_07_052529) do
 
   add_foreign_key "blogs", "topics"
   add_foreign_key "blogs", "users"
+  add_foreign_key "portfolios", "users"
   add_foreign_key "technologies", "portfolios"
 end

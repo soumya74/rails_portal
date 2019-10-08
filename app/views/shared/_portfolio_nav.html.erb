@@ -1,0 +1,16 @@
+<header>
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="col-4 pt-1 container d-flex justify-content-between">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+        <strong>Welcome, <%= current_user.first_name %></strong>
+      </a>
+    </div>
+    <div class="col-4 text-center">
+      <a class="blog-header-logo text-dark" href="#">Welcome, <%= current_user.first_name %></a>
+    </div>
+    <div class="col-4 d-flex justify-content-end align-items-center">
+      <%= nav_helper 'nav-link', 'span' %>
+      <%= login_helper('btn btn-outline-warning')%>
+    </div>
+  </div>
+</header>

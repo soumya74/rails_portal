@@ -1,4 +1,8 @@
 class PortfoliosController < ApplicationController
+  access all: [:show, :index],
+        user: {except: [:destroy]},
+        editor: {except: [:destroy]},
+        site_admin: :all
   layout "portfolio"
     def index
         @portfolio_items = Portfolio.all
@@ -18,7 +22,10 @@ class PortfoliosController < ApplicationController
     end
 
     def create
-        @portfolio_item = Portfolio.new(portfolio_params)
+        @portfolio_item = Portfolio.new(portfolio_params.merge(user_id: current_user.id))
+        if current_user.roles=="user"
+          current_user.update(roles: "editor")
+        end
 
         respond_to do |format|
           if @portfolio_item.save
@@ -66,6 +73,12 @@ private
       params.require(:portfolio).permit(:title,
                                         :subtitle,
                                         :body,
+                                        :facebook_link,
+                                        :github_link,
+                                        :linkedin_link,
+                                        :github_link,
+                                        :insta_link,
+                                        :twitter_link,
                                         technologies_attributes: [:name]
                                         )
     end

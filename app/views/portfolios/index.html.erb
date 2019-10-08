@@ -1,13 +1,8 @@
-<h1>Portfolio Index</h1>
-
-<a href=portfolios/new>Create New Item</a>
-<br><br><br>
-<%= link_to "Create Rails Link",new_portfolio_path %>
-<br><br><br>
-<%= link_to "angular portfolios",portfolios_angular_path%>
-<br><br><br>
-<%= link_to "ruby on rails portfolios", portfolios_ruby_on_rails_path%>
-<br><br><br>
-<%=@portfolio_items.inspect%>
-<br>
-<%= render partial: 'portfolio_item', collection: @portfolio_items%>
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row">
+        <%= render partial: 'portfolio_item', collection: @portfolio_items%>
+    </div>
+  </div>
+  <!-- <a href=portfolios/new>Create New Item</a> -->
+</div>

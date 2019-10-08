@@ -4,7 +4,7 @@
     <p class="blog-post-meta">Created <%= distance_of_time_in_words(@blog.created_at, Time.now)%> ago, by <a href="#"><%= @blog.user.first_name%></a></p>
     <p><%= link_to @blog.status, toggle_status_blog_path(@blog), class: "btn btn-sm btn-outline-success" if (logged_in?(:site_admin, :editor) && current_user.id==@blog.user.id) %>
        <%= link_to 'Edit', edit_blog_path(@blog), class: "btn btn-sm btn-outline-primary" if (logged_in?(:site_admin, :editor) && current_user.id==@blog.user.id)%>
-       <%= link_to 'Destroy', @blog, method: :delete, class: "btn btn-sm btn-outline-danger", data: { confirm: 'Are you sure?'} if logged_in?(:site_admin)%></p>
+       <%= link_to 'Delete', @blog, method: :delete, class: "btn btn-sm btn-outline-danger", data: { confirm: 'Are you sure?'} if logged_in?(:site_admin)%></p>
     <p><%= @blog.body %></p>
 
     <%= link_to 'Back', blogs_path %>

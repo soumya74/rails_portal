@@ -1,21 +1,33 @@
-<h1>Portfolio Item</h1>
-<br>
-<%= @portfolio_item.title%>
-
-<br>
-<%= @portfolio_item.subtitle%>
-
-<br>
-<%= @portfolio_item.body%>
-
-<br>
-<%= image_tag @portfolio_item.main_image if !@portfolio_item.main_image.nil?%>
-
-<br>
-<%= image_tag @portfolio_item.thumb_image if !@portfolio_item.thumb_image.nil?%>
-
-<% @portfolio_item.technologies.each do |t| %>
-<p><%= t.name%></p>
-<% end %>
-
-<%= link_to "Back", portfolios_path%>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <%= image_tag @portfolio_item.main_image if !@portfolio_item.main_image.nil?%>
+    </div>
+    <div class="col-md-6">
+      <h1><%= @portfolio_item.user.name%></h1>
+      <h3><%= @portfolio_item.title%></h3>
+      <h5><%= @portfolio_item.subtitle%></h5>
+      <hr>
+      <%= @portfolio_item.body%>
+      <hr>
+      <div class="row">
+        <div class="col-md-2">
+          <%= link_to "  ", @portfolio_item.facebook_link , class: "fa fa-facebook social-links social-links" %>
+        </div>
+        <div class="col-md-2">
+          <%= link_to "  ", @portfolio_item.insta_link , class: "fa fa-instagram social-links social-links" %>
+        </div>
+        <div class="col-md-2">
+          <%= link_to "  ", @portfolio_item.linkedin_link , class: "fa fa-linkedin social-links social-links" %>
+        </div>
+        <div class="col-md-2">
+          <%= link_to "  ", @portfolio_item.twitter_link , class: "fa fa-twitter social-links social-links" %>
+        </div>
+        <div class="col-md-2">
+          <%= link_to "  ", @portfolio_item.github_link , class: "fa fa-github social-links social-links" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= link_to "Back", portfolios_path%>
+</div>
