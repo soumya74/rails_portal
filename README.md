@@ -19,3 +19,8 @@
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
+
+
+# Interesting Blogs for Reference :
+
+1. [What causes Ruby memory bloat?](https://www.joyfulbikeshedding.com/blog/2019-03-14-what-causes-ruby-memory-bloat.html)
