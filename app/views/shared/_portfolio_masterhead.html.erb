@@ -1,13 +1,13 @@
 <section class="jumbotron text-center">
   <div class="container">
     <h1 class="jumbotron-heading">Portfolio Power</h1>
-    <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+    <p class="lead text-muted">Portfolios are great to showcase ones experience in a specific domain. Just explore through my portfolios for understanding my experience & expertise in each domain.</p>
     <p>
       <% if !current_user.is_a?(GuestUser) %>
         <% portfolio_item = Portfolio.find_by(user_id: current_user.id) %>
+        <%= link_to "Add Another Portfolio", new_portfolio_path, class: "btn btn-success my-2" if (logged_in?(:site_admin, :editor)) %>
         <%= link_to "Start Writing Blog", new_blog_path, class: "btn btn-primary my-2" if !portfolio_item.nil? %>
-        <%= link_to "Edit your Portfolio", edit_portfolio_path(portfolio_item.id), class: "btn btn-secondary my-2" if !portfolio_item.nil? %>
-        <%= link_to "Create Own Portfolio", new_portfolio_path, class: "btn btn-primary my-2" if portfolio_item.nil? %>
+        <%# <%= link_to "Edit your Portfolio", edit_portfolio_path(portfolio_item.id), class: "btn btn-secondary my-2" if (logged_in?(:site_admin, :editor) && !portfolio_item.nil?) %>
       <% end %>
       <%# <a href="#" class="btn btn-primary my-2">Start Writing a Blog</a> %>
       <%# <a href="#" class="btn btn-secondary my-2">Edit your Portfolio</a> %>

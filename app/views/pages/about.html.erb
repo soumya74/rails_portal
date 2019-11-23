@@ -1,14 +1,46 @@
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-  <main role="main" class="inner cover" style="text-align: center">
-    <h1 class="cover-heading">About Me</h1>
 
-    <p class="lead btn badge badge-warning" >Work Experience</p>
-    <p class="lead">Product Engineer (Full Stack Developer), Payabbhi, Kolkata, India
-                <br>Senior Engineer, Qulacomm India, Hyderabad, India
-                <br>Engineer, Interra Systems India, Noida, India</p>
 
-    <p class="lead btn badge badge-warning">Education</p>
-    <p class="lead">M.Tech., Indian Institute of Technology (IIT), Delhi, India
-                <br>B.E., Jadavpur University, Kolkata, India</p>
-  </main>
+<div class="cover-container d-flex w-100 h-150 p-3 mx-auto flex-column card" style="background-color: #ffffdb; opacity: 0.95">
+  <div class="container">
+    <main role="main" class="inner cover" style="text-align: center">
+      <h1 class="cover-heading text-danger">About Me</h1>
+
+      <div class="row text-info">
+        <div class="col-md-4">
+          <p></p><p></p>
+          <%= image_tag "profile_image.jpg",width: 230, height: 250, alt: "Profile Image"%>
+          <p class="lead text-primary">Soumya Sengupta</p>
+          <p class="lead">Explore my Experience through My Protfolios</p>
+          <%= link_to "My Portfolios", portfolios_path, class:  "btn btn-lg btn-outline-primary btn-block"%>
+        </div>
+        <div class="col-md-8">
+          <div class="card" style="background-color: #EDE3FE; opacity: 0.90">
+            <div class="card-body text-primary">
+              <p class="lead btn badge badge-warning" >Work Experience</p>
+                <ul>
+                  <li>Full Stack Developer, Payabbhi, Kolkata, India</li>
+                  <ul class="text-info">
+                    <li><b>Experience</b>: Working actively in Microservice based architecture. Technologies used includes Java Spring Framework, GoLang, Ruby on Rails, MySql, MongoDB, AWS, Docker etc. </li>
+                  </ul>
+                  <li>Senior Engineer, Qulacomm India, Hyderabad, India</li>
+                  <ul class="text-info">
+                    <li><b>Experience</b>: Integrated EIS for Qualcomm Snapdragon processors </li>
+                  </ul>
+                  <li>Engineer, Interra Systems India, Noida, India</li>
+                  <ul class="text-info">
+                    <li><b>Experience</b>: Worked actively in developing algorithms using Image Processiong & Machine Learning </li>
+                  </ul>
+                </ul>
+              <p class="lead btn badge badge-warning">Education</p>
+                <ul>
+                  <li>M.Tech., Indian Institute of Technology (IIT), Delhi, India</li>
+                  <li>B.E., Jadavpur University, Kolkata, India</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
 </div>

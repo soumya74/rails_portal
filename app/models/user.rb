@@ -15,7 +15,7 @@ class User < ApplicationRecord
 
   validates_presence_of :name
   has_many :blogs
-  has_one :portfolio
+  has_many :portfolio
 
   def first_name
     self.name.split.first

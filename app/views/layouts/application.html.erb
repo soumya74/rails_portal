@@ -9,6 +9,8 @@
 
     <meta name="keywords" content="<%= @seo_keywords%>"/>
 
+    <%= favicon_link_tag 'favicon.ico'%>
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -16,6 +18,7 @@
   <body>
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 
+      <div id="background_application"></div>
       <%= render "shared/application_nav" %>
 
       <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">

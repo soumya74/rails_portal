@@ -2,5 +2,5 @@
   <h2 class="blog-post-title"><%= link_to blog.title, blog %></h2>
   <% portfolio_item = Portfolio.find_by(user_id: blog.user_id) %>
   <p class="blog-post-meta">Created <%= distance_of_time_in_words(blog.created_at, Time.now)%> ago, by <%= link_to  blog.user.first_name, portfolio_path(portfolio_item.id) %></a></p>
-  <p><%= blog.body[0,200] %><%= link_to " ... more", blog %></p>
+  <p><%= markdown blog.body[0,50] %><%= link_to " ... more", blog %></p>
 </div>
