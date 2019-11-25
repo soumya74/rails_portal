@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6">
-      <%= image_tag @portfolio_item.main_image if !@portfolio_item.main_image.nil?%>
+    <div class="col-md-2">
+      <%= image_tag "portfolio_basic_image.png" if !@portfolio_item.main_image.nil?%>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-10">
       <h1><%= @portfolio_item.title%></h3>
       <h3><%= @portfolio_item.subtitle%></h5>
       <h5><%= @portfolio_item.user.name%></h1>
