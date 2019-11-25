@@ -1,15 +1,26 @@
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <main role="main" class="inner cover" style="text-align: center">
-    <h1 class="cover-heading"><b>Welcome</b></h1>
-    <div style="background-color: #AFAFAF; opacity: 0.9">
-    <h4 class="cover-heading text-warning"><br>Hi I am Soumya Sengupta. Welcome to my personal Portfolio. You can go through my portfolios and my blogs for exploring my experience in different domains. Feel free to contact me.</h4>
+    <h1 class="cover-heading text-warning"><b>Welcome</b></h1>
+    <div class="cover-container d-flex w-100 h-150 p-3 mx-auto flex-column card" style="background-color: #AFAFAF; opacity: 0.95">
+    <h4 class="cover-heading" style="color: #820900"><br>Hi I am <b>Soumya Sengupta</b>. Welcome to my personal Portfolio. You can go through my portfolios and my blogs for exploring my experience in different domains. Feel free to contact me.</h4>
     <p class="lead">
       <%# <%= link_to "REGISTER to Create Own Portfolio NOW", new_user_registration_path, class:  "btn btn-lg btn-secondary" if current_user.is_a?(GuestUser)%>
       <%= link_to "Explore my World through My Blogs", blogs_path, class:  "btn btn-lg btn-success"%>
       <%# <a href="#" class="btn btn-lg btn-secondary">REGISTER to Create Own Portfolio NOW</a> %>
     </p>
-    <p class="lead text-warning"><b>Wanna know more about me ? Travel through<b></p>
-    <%= link_to "About Me", about_path, class:  "btn btn-lg btn-primary"%>
+    <h4 class="cover-heading text-warning"><b>Want to know more ? Travel through<b></h4>
+    <div class="row">
+      <div class="col-md-3">
+      </div>
+      <div class="col-md-3">
+        <%= link_to "About Me", about_path, class:  "btn btn-lg btn-sm btn-block btn-primary"%>
+      </div>
+      <div class="col-md-3">
+        <%= link_to "Website Info", websiteInfo_path, class:  "btn btn-lg btn-sm btn-block btn-info"%>
+      </div>
+      <div class="col-md-3">
+      </div>
+    </div>
     <p><br><br></p>
     </div>
   </main>
