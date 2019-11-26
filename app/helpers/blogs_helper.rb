@@ -14,6 +14,12 @@ module BlogsHelper
             no_intra_emphasis: true,
             autolink: true,
             lax_html_blocks: true,
+            tables: true,
+            strikethrough: true,
+            underline: true,
+            highlight: true,
+            quote: true,
+            superscript: true,
         }
 
         markdown_to_html = Redcarpet::Markdown.new(codeRayified, options)
