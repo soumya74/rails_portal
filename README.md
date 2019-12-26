@@ -18,9 +18,7 @@
 
 * Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-test
 
 
 # Interesting Blogs for Reference :
