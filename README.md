@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/soumya74/rails_portal.svg?branch=master)](https://travis-ci.org/soumya74/rails_portal)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # README
 
