@@ -9,7 +9,16 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.page(params[:page]).per(5)
+    # byebug
+
+    blogs1 = Blog.where(:user_id=> current_user.id, :status=>0)
+    blogs2 = Blog.where(:status=>1)
+    unless blogs1.nil?
+      @blogs = blogs1.page(params[:page]).per(5)
+    end
+    unless blogs2.nil?
+      @blogs = @blogs + blogs2
+    end
     @page_title = "Portfolio-Blogs | Blogs"
   end
 
